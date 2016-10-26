@@ -1,149 +1,15 @@
 //
-//  FilterViewController.swift
+//  InputForm.swift
 //  Yelp
 //
-//  Created by Lu Ao on 10/23/16.
+//  Created by Lu Ao on 10/25/16.
 //  Copyright © 2016 Timothy Lee. All rights reserved.
 //
 
 import UIKit
 
 
-protocol FilterViewControllerDelegate {
-    func filterViewController(filterViewController:FilterViewController, didUpdateFilter filter : [String:AnyObject])
-}
-
-class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,FilterTableViewCellDelegate {
-
-    
-    
-    @IBOutlet weak var filterTable: UITableView!
-    
-    var sectionBeingSelected : Int?
-    var rowBeingSelected : Int?
-    var sectionExpands : Bool? = false
-    var filterBeingSelected : String?
-    var switchState : [IndexPath:Bool]? = [IndexPath:Bool]()
-    var delegate : FilterViewControllerDelegate?
-    var indexPathSelected : IndexPath?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        filterTable.reloadData()
-    }
-    
-    //Setting/Loading data for table Cell
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return self.data.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // if section.row.1 is selected
-        //return self.data[section].1.count
-        
-        if self.sectionExpands == true && indexPathSelected?.section == section{
-            return self.data[section].1.count
-        }
-        else if self.data[section].0 == "categories"{
-            return self.categories.count
-        }
-        else{
-            return 1
-        }
-        
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.data[section].0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        if indexPath.section == 1{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DistanceFilterTableViewCell") as! DistanceFilterTableViewCell
-            if (sectionExpands == true && indexPathSelected?.section == indexPath.section) || indexPathSelected == nil{
-                cell.textLabel?.text = self.data[indexPath.section].1[indexPath.row]
-            }
-            else if sectionExpands == false && indexPathSelected?.section == indexPath.section{
-                cell.textLabel?.text = self.data[(indexPathSelected?.section)!].1[(indexPathSelected?.row)!]
-            }
-            return cell
-        }
-        else if indexPath.section == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DistanceFilterTableViewCell") as! DistanceFilterTableViewCell
-            if (sectionExpands == true && indexPathSelected?.section == indexPath.section) || indexPathSelected == nil{
-                cell.textLabel?.text = self.data[indexPath.section].1[indexPath.row]
-            }
-            else if sectionExpands == false && indexPathSelected?.section == indexPath.section{
-                cell.textLabel?.text = self.data[(indexPathSelected?.section)!].1[(indexPathSelected?.row)!]
-            }
-            return cell
-        }
-        else if indexPath.section == 3 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FilterTableViewCell") as! FilterTableViewCell
-            cell.filterLabel?.text = self.categories[indexPath.row]["name"]
-            cell.delegate = self
-            cell.filterSwitch.isOn = switchState?[indexPath] ?? false
-            return cell
-        }
-        else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FilterTableViewCell") as! FilterTableViewCell
-            cell.filterLabel?.text = self.data[indexPath.section].1[indexPath.row]
-            cell.delegate = self
-            cell.filterSwitch.isOn = switchState?[indexPath] ?? false
-            return cell
-        }
-        
-    }
-    // Prevent switch state being reuse because cell reuse
-    func filterTableViewCell(filterTableViewCell: FilterTableViewCell, switchValueChanged value: Bool) {
-        let indextPath = self.filterTable.indexPath(for: filterTableViewCell)
-        switchState?[indextPath!] = value
-        print("Switch got the event")
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section != 3 && indexPath.section != 0{
-            if self.sectionExpands == false{
-                self.sectionExpands = true
-                self.indexPathSelected = indexPath
-                filterTable.reloadData()
-            }
-            else{
-                self.sectionExpands = false
-                self.indexPathSelected = indexPath
-                filterTable.reloadData()
-            }
-        }
-        tableView.deselectRow(at: indexPath, animated:true)
-        
-    }
-    
-    @IBAction func onSearchButton(_ sender: AnyObject) {
-        //Review!!!
-        var filter = [String:AnyObject]()
-        var selectedCategories = [String]()
-        for (indexpath,isSelected) in self.switchState!{
-            if isSelected{
-                selectedCategories.append(self.categories[indexpath.row]["code"]!)
-            }
-        }
-        if selectedCategories.count > 0{
-            filter["categories"] = selectedCategories as AnyObject?
-        }
-        self.delegate?.filterViewController(filterViewController: self, didUpdateFilter: filter)
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func onCancelButton(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    //category, sort (best match, distance, highest rated), distance, deals (on/off)
-    var data = [("Deal",["Deal"]),("Distance",["Best Match","0.3 miles","1 miles","5 miles","20 miles"]),("Sort by",["Best Match","Distance","Rating","Most Reviewed"]),("categories",["categories"])]
+class InputForm {
     
     let categories = [["name" : "Afghan", "code": "afghani"],
                       ["name" : "African", "code": "african"],
@@ -314,6 +180,4 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
      ["name" : "Wok", "code": "wok"],
      ["name" : "Wraps", "code": "wraps"],
      ["name" : "Yugoslav", "code": "yugoslav"]]*/
-
-
 }

@@ -17,6 +17,8 @@
 		22AAAA9C1AEA1EC300A544AF /* BusinessesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAAA9B1AEA1EC300A544AF /* BusinessesViewController.swift */; };
 		31D95BCBCA38716181E686D3 /* Pods_Yelp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79C0AC126EDAA235847CEA2 /* Pods_Yelp.framework */; };
 		47848697133B87663A122E3D /* Pods_YelpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1000F3975EB43318C1D4FA /* Pods_YelpTests.framework */; };
+		BF4E08501DC06CF800D7A05B /* InputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4E084F1DC06CF800D7A05B /* InputForm.swift */; };
+		BF4E08521DC0862C00D7A05B /* DistanceFilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4E08511DC0862C00D7A05B /* DistanceFilterTableViewCell.swift */; };
 		BF8D8D7A1DBD97B700D0C9D3 /* BusinessDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D8D791DBD97B700D0C9D3 /* BusinessDetailTableViewCell.swift */; };
 		BF8D8D841DBDE1C500D0C9D3 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D8D831DBDE1C500D0C9D3 /* FilterViewController.swift */; };
 		BF8D8D861DBDE1DB00D0C9D3 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D8D851DBDE1DB00D0C9D3 /* FilterTableViewCell.swift */; };
@@ -50,6 +52,8 @@
 		883322706A784248B16F444A /* Pods-Yelp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yelp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yelp/Pods-Yelp.release.xcconfig"; sourceTree = "<group>"; };
 		9B128C050DE78660DE2A8E75 /* Pods-YelpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YelpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YelpTests/Pods-YelpTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA3C5CF4FD317D72ABE2AAC4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF4E084F1DC06CF800D7A05B /* InputForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputForm.swift; sourceTree = "<group>"; };
+		BF4E08511DC0862C00D7A05B /* DistanceFilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceFilterTableViewCell.swift; sourceTree = "<group>"; };
 		BF8D8D791DBD97B700D0C9D3 /* BusinessDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BF8D8D831DBDE1C500D0C9D3 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		BF8D8D851DBDE1DB00D0C9D3 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				BF8D8D791DBD97B700D0C9D3 /* BusinessDetailTableViewCell.swift */,
 				BF8D8D831DBDE1C500D0C9D3 /* FilterViewController.swift */,
 				BF8D8D851DBDE1DB00D0C9D3 /* FilterTableViewCell.swift */,
+				BF4E08511DC0862C00D7A05B /* DistanceFilterTableViewCell.swift */,
+				BF4E084F1DC06CF800D7A05B /* InputForm.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -394,7 +400,9 @@
 				222D8A7D19CCFAE000D2DB53 /* YelpClient.swift in Sources */,
 				BF8D8D7A1DBD97B700D0C9D3 /* BusinessDetailTableViewCell.swift in Sources */,
 				BF8D8D861DBDE1DB00D0C9D3 /* FilterTableViewCell.swift in Sources */,
+				BF4E08501DC06CF800D7A05B /* InputForm.swift in Sources */,
 				222D8A5B19CCF9F900D2DB53 /* AppDelegate.swift in Sources */,
+				BF4E08521DC0862C00D7A05B /* DistanceFilterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

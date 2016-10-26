@@ -178,7 +178,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" onImage="Image" offImage="Image" translatesAutoresizingMaskIntoConstraints="NO" id="dZ8-N6-r45"/>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="DUm-Eq-vbt" firstAttribute="leading" secondItem="XTR-y9-MTa" secondAttribute="leadingMargin" constant="27" id="Kl3-q4-WGJ"/>
+                                                <constraint firstItem="DUm-Eq-vbt" firstAttribute="leading" secondItem="XTR-y9-MTa" secondAttribute="leadingMargin" constant="13" id="Kl3-q4-WGJ"/>
                                                 <constraint firstItem="DUm-Eq-vbt" firstAttribute="top" secondItem="XTR-y9-MTa" secondAttribute="topMargin" constant="13" id="a4r-ND-T6B"/>
                                                 <constraint firstItem="dZ8-N6-r45" firstAttribute="top" secondItem="XTR-y9-MTa" secondAttribute="topMargin" constant="8" id="bie-Hi-nFU"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="dZ8-N6-r45" secondAttribute="trailing" constant="24" id="yzw-gB-ihL"/>
@@ -188,6 +188,14 @@
                                             <outlet property="filterLabel" destination="DUm-Eq-vbt" id="Q9j-Zi-Q5v"/>
                                             <outlet property="filterSwitch" destination="dZ8-N6-r45" id="gJ5-Oh-g5A"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DistanceFilterTableViewCell" id="IrV-hb-wPG" customClass="DistanceFilterTableViewCell" customModule="Yelp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="154" width="375" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IrV-hb-wPG" id="Vx1-jJ-ABk">
+                                            <frame key="frameInset" width="375" height="61"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
